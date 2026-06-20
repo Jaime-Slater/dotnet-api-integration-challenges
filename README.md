@@ -1,174 +1,121 @@
-# JSONPlaceholder Task Completion Challenge
+# .NET API Integration Challenges
 
-A small .NET console application built as an interview-style API coding challenge.
+A collection of small C#/.NET API integration challenges built to demonstrate practical backend development skills.
 
-The application consumes a public REST API, maps the response data into C# models, joins related datasets, calculates task completion statistics, and prints a clean report to the console.
+These projects focus on consuming external REST APIs, mapping JSON responses into C# models, transforming data, and producing useful summaries.
 
 ## Purpose
 
-This project demonstrates practical API integration skills in C#/.NET, including:
+This repository is intended as a portfolio of interview-style coding exercises.
 
-- Calling external REST APIs with `HttpClient`
-- Deserialising JSON responses into DTOs
-- Joining related API datasets
-- Calculating summary statistics
-- Handling simple edge cases
-- Producing readable console output
-- Keeping the solution simple and interview-appropriate
+The aim is to show practical skills in:
 
-The project uses [JSONPlaceholder](https://jsonplaceholder.typicode.com/), a free fake REST API for testing and prototyping.
+- REST API consumption
+- HttpClient
+- JSON deserialisation
+- DTO design
+- Data mapping and transformation
+- LINQ
+- Error handling
+- Console reporting
+- Clean project structure
 
-## What the Application Does
+## Challenges
 
-The app retrieves:
+### JSONPlaceholder Task Summary
 
-- Users from `/users`
-- Todos from `/todos`
+Folder:
 
-It then joins todos to users by `UserId` and calculates a task completion summary for each user.
+```
+JsonPlaceholderTaskSummary/
+```
 
-For each user, the report includes:
+A console application that retrieves users and todos from JSONPlaceholder, joins the datasets, and calculates task completion statistics per user.
 
-- Name
-- Email
-- Company name
-- Total tasks
-- Completed tasks
-- Incomplete tasks
-- Completion percentage
-- Status
+Skills shown:
 
-The user status is calculated as:
+- Calling multiple API endpoints
+- Mapping JSON responses into C# DTOs
+- Joining related API data by ID
+- Calculating completion percentages
+- Producing a readable summary report
 
-| Completion Percentage | Status      |
-| --------------------- | ----------- |
-| 80% or higher         | Excellent   |
-| 60% or higher         | Good        |
-| Less than 60%         | Needs Focus |
+### OpenMeteo Weather Summary
 
-The app also prints an overall summary showing:
+Folder:
 
-- Total users
-- Total tasks
-- Total completed tasks
-- Total incomplete tasks
-- Average completion percentage
-- Best performing user
-- Worst performing user
+```
+OpenMeteoWeatherSummary/
+```
+
+A console application that retrieves location and weather forecast data, maps array-based API responses, and calculates a simple weather risk summary.
+
+Skills shown:
+
+- Calling dependent APIs
+- Mapping external DTOs into internal models
+- Working with daily forecast arrays
+- Calculating average temperature and rainfall summaries
+- Applying simple business rules to API data
 
 ## Tech Stack
 
 - C#
 - .NET 8
-- Console application
-- `HttpClient`
-- `System.Net.Http.Json`
+- Console applications
+- HttpClient
+- System.Net.Http.Json
 
-## Project Structure
+## Repository Structure
 
-```text
-JsonPlaceholderChallenge/
-  Models/
-    Company.cs
-    Todo.cs
-    User.cs
-    UserTaskSummary.cs
-
-  Services/
-    JsonPlaceholderClient.cs
-
-  ConsolePrinter.cs
-  Program.cs
-  JsonPlaceholderChallenge.csproj
+```
+dotnet-api-integration-challenges/
+  JsonPlaceholderTaskSummary/
+  OpenMeteoWeatherSummary/
+  README.md
 ```
 
-## API Endpoints Used
+## Running a Challenge
 
-Base URL:
+Open the folder for the challenge you want to run.
 
-```text
-https://jsonplaceholder.typicode.com/
+Example:
+
 ```
-
-Endpoints:
-
-```http
-GET /users
-GET /todos
-```
-
-No authentication or special headers are required.
-
-## How to Run
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Jaime-Slater/dotnet-api-integration-challenges.git
-cd dotnet-api-integration-challenges
-```
-
-Restore and run:
-
-```bash
+cd JsonPlaceholderTaskSummary
 dotnet restore
 dotnet run
 ```
 
-## Example Output
+Or:
 
-```text
-Task Completion Report
-
-----------
-Name: Leanne Graham
-Email: Sincere@april.biz
-Company name: Romaguera-Crona
-Total tasks: 20
-Completed tasks: 11
-Incomplete tasks: 9
-Completion percentage: 55.0%
-Status: Needs Focus
-
-----------
-Overall Summary
-
-Total Users: 10
-Total Tasks: 200
-Total Completed: 90
-Total Incomplete: 110
-Average Completion: 45.0%
-Best User: Chelsey Dietrich - 60.0%
-Worst User: Patricia Lebsack - 30.0%
+```
+cd OpenMeteoWeatherSummary
+dotnet restore
+dotnet run
 ```
 
-Actual values may vary if the API data changes.
+## Current Status
 
-## Key Implementation Points
-
-The app deliberately keeps the architecture simple because this was built as a short interview-style challenge.
-
-The main areas demonstrated are:
-
-- Keeping DTOs focused on only the fields required
-- Separating API access into a small client class
-- Avoiding integer division when calculating percentages
-- Guarding against empty API responses
-- Ordering results by completion percentage
-- Formatting output for readability
-
-## Possible Improvements
-
-Given more time, this project could be extended with:
-
-- Dependency injection
-- `IHttpClientFactory`
-- Unit tests for the summary calculation logic
-- A minimal API endpoint returning JSON
-- Command-line filtering by status
-- Better structured error handling
-- Logging
+| Challenge                    | Status   |
+| ---------------------------- | -------- |
+| JSONPlaceholder Task Summary | Complete |
+| OpenMeteo Weather Summary    | Complete |
 
 ## Notes
 
-This is not intended to be a production application. It is a compact API integration exercise designed to show clean, practical C# coding and basic data transformation skills.
+These are deliberately small projects. They are not intended to be full production systems.
+
+The goal is to demonstrate clear, practical API integration skills without unnecessary complexity.
+
+## Possible Future Improvements
+
+Future improvements may include:
+
+- Dependency injection
+- IHttpClientFactory
+- Unit tests
+- Minimal API endpoints
+- Better structured error handling
+- Logging
+- Configuration via appsettings.json
