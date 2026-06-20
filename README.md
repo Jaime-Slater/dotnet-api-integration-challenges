@@ -104,8 +104,8 @@ No authentication or special headers are required.
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
-cd YOUR-REPO-NAME
+git clone https://github.com/Jaime-Slater/dotnet-api-integration-challenges.git
+cd dotnet-api-integration-challenges
 ```
 
 Restore and run:
