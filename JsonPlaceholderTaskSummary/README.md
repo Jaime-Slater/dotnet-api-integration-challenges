@@ -59,7 +59,7 @@ The app also prints an overall summary showing:
 ## Tech Stack
 
 - C#
-- .NET 8
+- .NET 9
 - Console application
 - `HttpClient`
 - `System.Net.Http.Json`
