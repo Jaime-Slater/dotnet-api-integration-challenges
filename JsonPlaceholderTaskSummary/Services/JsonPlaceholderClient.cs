@@ -19,6 +19,7 @@ public class JsonPlaceholderClient
     {
         //call users
         var response = await _httpClient.GetFromJsonAsync<List<User>>("users");
+
         if (response?.Count > 0)
         {
             Console.WriteLine($"Users retrieved: {response.Count}");

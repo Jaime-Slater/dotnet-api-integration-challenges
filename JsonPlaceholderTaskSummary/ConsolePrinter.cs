@@ -11,7 +11,7 @@ public static class ConsolePrinter
         Console.WriteLine($"Total tasks: {user.TotalTasks}");
         Console.WriteLine($"Completed tasks: {user.CompletedTasks}");
         Console.WriteLine($"Incomplete tasks: {user.IncompleteTasks}");
-        Console.WriteLine($"Completion percentage: {user.CompletionPercentage}");
+        Console.WriteLine($"Completion percentage: {user.CompletionPercentage:F1}%");
         Console.WriteLine($"Status: {user.Status}");
     }
 
@@ -45,7 +45,7 @@ public static class ConsolePrinter
         Console.WriteLine($"Total Incomplete: {incompleteTasks}");
         Console.WriteLine($"Average Completion: {averageCompletion:F1}%");
         Console.WriteLine($"Best User: {bestUser.Name} - {bestUser.CompletionPercentage:F1}%");
-        Console.WriteLine($"Worst User: {worstUser.Name} - {bestUser.CompletionPercentage:F1}%");
+        Console.WriteLine($"Worst User: {worstUser.Name} - {worstUser.CompletionPercentage:F1}%");
 
     }
 }
