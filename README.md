@@ -61,7 +61,7 @@ Skills shown:
 ## Tech Stack
 
 - C#
-- .NET 8
+- .NET 9
 - Console applications
 - HttpClient
 - System.Net.Http.Json
